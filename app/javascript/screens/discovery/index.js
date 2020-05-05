@@ -6,7 +6,6 @@ import Dicovery from '../../components/dicovery';
     const DiscoveryScreen = () => {
       return(
         <Fragment>
-          <div>Discovery Screen</div>
           <SectionWrapper>
             <Dicovery/>
           </SectionWrapper>

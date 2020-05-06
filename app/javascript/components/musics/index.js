@@ -11,6 +11,30 @@ const Musics = (props) => {
   const [songs, setSongs] = useState([]);
   const [playing, setPlaying] = useState([]);
   const AudioRef = useRef();
+  const [playRandom, setPlayRandom] = useState(false);
+
+  const NextSong = () => {
+    if(playRandom) {
+      let index = Math.floor(Math.random()*props.songs.length);
+      setPlaying(props.songs[index]);
+    } else {
+      setPlaying([]);
+    }
+  }
+
+  const SwitchRandom = () => {
+    if(playRandom) {
+      setPlayRandom(false);
+      setPlaying([]);
+    } else {
+      setPlayRandom(true);
+    }
+  }
+
+  useEffect(() => {
+    if(playRandom)
+    NextSong();
+  },[playRandom]);
 
   useEffect(() =>{
     if(AudioRef.current !== null) {
@@ -41,10 +65,11 @@ const Musics = (props) => {
           <PlaySequenceButton
             className='is-medium'
             color='primary'
-            outlined >
-              Tocar aletoriamente
+            outlined
+            onClick={() => SwitchRandom()} >
+              {playRandom == true ? 'Para de tocar' : 'Tocar aletoriamente'}
           </PlaySequenceButton>
-          <audio controls ref={AudioRef}>
+          <audio controls ref={AudioRef} onEnded={() => NextSong()} className='is-hidden'>
             <source src={playing.file_url}/>
           </audio>
         </Columns.Column> 

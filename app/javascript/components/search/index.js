@@ -25,11 +25,11 @@ const Search = () => {
   }
   return (
     <Fragment>
-      <Colmuns>
+      <Columns>
         <Columns.Column desktop={{ size: 6, offset: 3 }} mobile={{ size: 12 }}>
           <SearchBar fetchSearch={fetchSearch}/>
         </Columns.Column>
-      </Colmuns>
+      </Columns>
 
       <Categories fetchCategorySearch={fetchCategorySearch}/>
 

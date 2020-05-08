@@ -16,7 +16,7 @@ const SearchBar = (props) => {
         <Form.Control iconRight>
           <Form.Input
             placeholder='Text input'
-            placeholder='Albuns, artistas ou musicas'
+            placeholder='Albums, artistas ou musicas'
             value={query}
             onChange={e => setQuery(e.target.value)}
 />

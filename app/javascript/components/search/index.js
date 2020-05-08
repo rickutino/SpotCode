@@ -4,6 +4,7 @@ import Categories from  '../common/categories';
 import { Columns } from 'react-bulma-components';
 import SearchService from '../../services/search';
 import CategoriesService from '../../services/categories';
+import ResultsTabs from '../common/results_tabs';
 
 const Search = () => {
   const [albums,  setAlbums]  = useState([]);
@@ -20,7 +21,7 @@ const Search = () => {
   async function fetchSearch(query) {
     const response = await SearchService.index(query);
     setAlbums(response.data['albums']);
-    setArtirst(response.data['artists']);
+    setArtists(response.data['artists']);
     setSongs(response.data['songs']);
   }
   return (
@@ -30,7 +31,7 @@ const Search = () => {
           <SearchBar fetchSearch={fetchSearch}/>
         </Columns.Column>
       </Columns>
-
+      <ResultsTabs albums={albums} artists={artists} songs={songs}/>
       <Categories fetchCategorySearch={fetchCategorySearch}/>
 
     </Fragment>

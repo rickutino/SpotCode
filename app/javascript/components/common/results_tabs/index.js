@@ -20,7 +20,7 @@ const ResultsTabs = (props) => {
 
   useEffect(() => {
     setAlbums(props.albums.map((album, key) =>
-      <Columns.Column desktop={{ size: 3}} mobile={{ size: 6 }} key={{ key }}>
+      <Columns.Column desktop={{ size: 3}} mobile={{ size: 6 }} key={ key }>
         <Album artist_name={album.artist_name} title={album.title} cover_url={album.cover_url} id={album.id}/>
       </Columns.Column>
     ));

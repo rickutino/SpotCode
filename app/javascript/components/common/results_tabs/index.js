@@ -28,10 +28,11 @@ const ResultsTabs = (props) => {
 
   return (
     <Fragment>
-      <Tabs 
-        style={{display: props.albums.length || props.artists.length || props.songs.length ? "" : "none"}}
-        align='centered' size='medium'
-      >
+     <Tabs
+       style={{display: props.albums.length || props.artists.length || props.songs.length ? "" : "none"}}
+       align='centered' size='medium'
+       
+     >
         <CustomTab active={active_tab == 'albums' ? true : false} onClick={() => setActiveTab('albums')}>
           Albums
         </CustomTab>

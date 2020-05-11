@@ -8,7 +8,7 @@ import NavbarFooter from '../../components/common/navbar_footer';
       return(
         <Fragment>
           <SectionWrapper>
-            <Heading className='has-text-centered has-text-white'>Buscar</Heading> 
+            <Heading className='has-text-centered has-text-white'>Search</Heading> 
             <Search/>
           </SectionWrapper>
           <NavbarFooter/>

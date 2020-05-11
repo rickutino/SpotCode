@@ -38,7 +38,7 @@ const Discovery = () => {
       {recent_albums_components.length > 0 &&
         <div>
           <Heading className='has-text-white' size={4}>
-            Tocadas recentemente
+            Recents Albums
           </Heading>
           <Columns className='is-movile'>
             {recent_albums_components}
@@ -48,7 +48,7 @@ const Discovery = () => {
       {recommended_albums_components.length > 0 &&
         <DivVSpace>
           <Heading className='has-text-white' size={4}>
-            Recomendadas
+            Recommended Albums
           </Heading>
           <Columns className='is-movile'>
             {recommended_albums_components}

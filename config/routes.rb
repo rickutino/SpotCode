@@ -16,11 +16,15 @@ Rails.application.routes.draw do
       resources :categories, only: [:index,:show]
       resources :albums, only: :show do
         resources :recently_heards, only: :create
+        concerns :favoritable, favoritable_type: 'Album'
       end
       resources :favorites, only: :index
       
       resources :songs, only: [] do
         concerns :favoritable, favoritable_type: 'Song'
+      end  
+      resources :artists, only: [] do
+        concerns :favoritable, favoritable_type: 'Artist'
       end  
     end
   end

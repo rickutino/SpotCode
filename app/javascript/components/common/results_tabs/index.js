@@ -58,7 +58,7 @@ const ResultsTabs = (props) => {
         </div>
 
         <div style={{display: active_tab != 'artists' ? 'none' : ""}}>
-          <div className='columns is-mobile is-multiline'>
+          <div className='columns is-mobile is-multiline '>
             {artists}
           </div>
         </div>
